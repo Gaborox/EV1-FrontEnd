@@ -1,0 +1,98 @@
+<header>
+    <title>{{ data.name }}</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'info/style.css' %}">
+</header>
+
+
+<body>
+    <div class="header">
+        <h1>Yo soy {{ data.name }}</h1>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            {% load static %}
+            <img src="{% static 'info/contact.png' %}" alt="contacto">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            <h1>Datos de contacto</h1><br>
+            <ul>
+                {% for key, values in data.personal.items %}
+                    <li>{{ key }}: {{ values }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            {% load static %}
+            <img src="{% static 'info/about.jpeg' %}" alt="acerca">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            <h1>Acerca de mi</h1>
+            <br>
+            <p>{{ data.description }}</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            {% load static %}
+            <img src="{% static 'info/academic.jpeg' %}" alt="estudios">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box five">
+            <h1>Informacion academica</h1><br>
+            <ul>
+                {% for key, values in data.background.items %}
+                    <li>{{ key }}: {{ values }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box five">
+            {% load static %}
+            <img src="{% static 'info/jobs.jpeg' %}" alt="experiencia">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="five">
+            <h1>Experiencia</h1><br>
+            <p>{{ data.experience }}</p>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box five">
+            {% load static %}
+            <img src="{% static 'info/hobbies.png' %}" alt="hobbies">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box five">
+            <h1>Hobbies</h1>
+            <ul>
+                {% for hobbie in data.hobbies %}
+                        <li>{{ hobbie }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+<footer>
+    <div class="wrapper">
+        <div class="five">
+            <h1>
+                <a class="green" href="{{ data.github }}" target="_blank">Mi Github</a>
+             </h1>
+        </div>
+    </div>
+
+</footer>
+</body>
+
